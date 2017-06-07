@@ -10,6 +10,23 @@
 
 @interface ViewController : UIViewController
 
+@property (strong, nonatomic) NSString *deviceID;
+
+@property (strong, nonatomic) NSString *deviceName;
+
+@property (strong, nonatomic) NSString *OSVersionString;
+
+@property (strong, nonatomic) NSString *ipAddress;
+
+@property (strong, nonatomic) NSString *localUserInformation;
+
+@property (strong, nonatomic) NSString *memoryProfile;
+
+@property (strong, nonatomic) NSString *operatingSystem;
+
+@property (nonatomic) Float32 memoryUsage;
+
+@property (nonatomic) Float32 deviceMemory;
 
 @end
 
