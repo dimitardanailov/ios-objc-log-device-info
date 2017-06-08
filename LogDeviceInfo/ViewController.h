@@ -16,6 +16,8 @@
 
 @property (strong, nonatomic) NSString *OSVersionString;
 
+@property (strong, nonatomic) NSString *deviceUserName;
+
 @property (strong, nonatomic) NSString *ipAddress;
 
 @property (strong, nonatomic) NSString *localUserInformation;
