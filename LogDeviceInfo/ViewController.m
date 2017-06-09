@@ -34,6 +34,7 @@ struct cpuPrintInfo {
 @property (weak, nonatomic) IBOutlet UILabel *cpuTotalSystemTimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *cpuTotalUserTimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *cpuTotalIdleTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *deviceHostNameLabel;
 
 @end
 
@@ -45,6 +46,7 @@ struct cpuPrintInfo {
 @synthesize deviceMemory = _deviceMemory;
 @synthesize OSVersionString = _OSVersionString;
 @synthesize deviceUserName = _deviceUserName;
+@synthesize cpuActiveProcessors = _cpuActiveProcessors;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -67,6 +69,21 @@ struct cpuPrintInfo {
     _cpuTotalUserTimeLabel.text = [NSString stringWithFormat:@"%f %%", cpuInfo.totalUserTime];
     _cpuTotalIdleTimeLabel.text = [NSString stringWithFormat:@"%f %%", cpuInfo.totalIdleTime];
     
+    // CPU Cores
+    NSUInteger cpuCores = [NSProcessInfo processInfo].activeProcessorCount;
+    NSString *valueActiveCPUCores = [NSString stringWithFormat:@"%li",  cpuCores];
+    NSLog(@"The number of active processing cores available on the computer.: %@", valueActiveCPUCores);
+    
+    NSUInteger processorCount = [NSProcessInfo processInfo].processorCount;
+    NSString *cpuCoresValue = [NSString stringWithFormat:@"%li",  processorCount];
+    NSLog(@"The number of processing cores available on the computer.: %@", cpuCoresValue);
+    
+    // https://stackoverflow.com/questions/448162/determine-device-iphone-ipod-touch-with-iphone-sdk
+    NSLog(@"Device model: %@", [UIDevice currentDevice].model);
+    NSLog(@"Device name: %@", [UIDevice currentDevice].name);
+    NSLog(@"Device system name: %@", [UIDevice currentDevice].systemName);
+    NSLog(@"Device system version: %@", [UIDevice currentDevice].systemVersion);
+
     // OS String version
     // _OSVersionStringLabel.text = [self OSVersionStringLabel];
     

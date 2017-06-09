@@ -84,6 +84,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Device Host Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTn-v6-Nt7">
+                                <rect key="frame" x="14" y="749" width="143" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fH6-5f-GuQ">
                                 <rect key="frame" x="16" y="108" width="343" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -161,6 +168,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="58E-yT-PZ9">
+                                <rect key="frame" x="16" y="771" width="338" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -169,6 +183,8 @@
                         <outlet property="cpuTotalIdleTimeLabel" destination="9gT-oP-YD8" id="Jhk-FJ-99g"/>
                         <outlet property="cpuTotalSystemTimeLabel" destination="4tj-pj-jkS" id="75I-ly-avy"/>
                         <outlet property="cpuTotalUserTimeLabel" destination="07j-tT-8qn" id="d19-Ln-6Ab"/>
+                        <outlet property="deviceHostName" destination="58E-yT-PZ9" id="xu6-l4-5L6"/>
+                        <outlet property="deviceHostNameLabel" destination="58E-yT-PZ9" id="IpJ-hD-kGy"/>
                         <outlet property="deviceIdLabel" destination="fH6-5f-GuQ" id="Rbq-Me-fcD"/>
                         <outlet property="deviceMemoryLabel" destination="40o-4Z-BSv" id="k5e-Ip-8rz"/>
                         <outlet property="deviceNameLabel" destination="sv3-oY-iQx" id="TZr-2g-gSL"/>

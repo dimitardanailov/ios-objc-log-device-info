@@ -26,6 +26,10 @@
 
 @property (strong, nonatomic) NSString *operatingSystem;
 
+@property (strong, nonatomic) NSString *deviceHostName;
+
+@property (nonatomic) NSUInteger *cpuActiveProcessors;
+
 @property (nonatomic) Float32 memoryUsage;
 
 @property (nonatomic) Float32 deviceMemory;
