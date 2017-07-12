@@ -17,4 +17,6 @@
 @property (strong, nonatomic) NSString *deviceSystemVersion;
 @property (strong, nonatomic) NSString *ipAddress;
 
++ (NSMutableString *) getNetworkData;
+
 @end

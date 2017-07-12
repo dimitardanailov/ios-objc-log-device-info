@@ -6,9 +6,11 @@
 //  Copyright © 2017 Dimitar Danailov. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
 #import <sys/utsname.h>
 #import <mach/mach.h>
 #import "ViewController.h"
+#import <SystemConfiguration/CaptiveNetwork.h>
 
 #import "DeviceInformationCollector.h"
 
@@ -62,6 +64,7 @@ struct cpuPrintInfo {
     NSLog(@"Username -  %@", deviceCollector.username);
     NSLog(@"Device system - %@", deviceCollector.deviceSystem);
     NSLog(@"Device system version - %@", deviceCollector.deviceSystemVersion);
+     NSLog(@" ip adddress - %@", deviceCollector.ipAddress);
     NSLog(@"----------- ");
     
     _deviceIdLabel.text = deviceCollector.deviceId;
@@ -98,7 +101,7 @@ struct cpuPrintInfo {
     // OS String version
     // _OSVersionStringLabel.text = [self OSVersionStringLabel];
     
-    _ipAddressLabel.text = @"Hello";
+    _ipAddressLabel.text = [DeviceInformationCollector getNetworkData];
 }
 
 
@@ -229,5 +232,4 @@ void cpuMonitor(struct cpuMonitor *cpu) {
     cpu->totalUserTime = totalUserTime;
     cpu->totalIdleTime = totalIdleTime;
 }
-
 @end
