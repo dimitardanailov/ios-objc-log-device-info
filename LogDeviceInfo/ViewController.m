@@ -10,6 +10,8 @@
 #import <mach/mach.h>
 #import "ViewController.h"
 
+#import "DeviceInformationCollector.h"
+
 struct cpuMonitor {
     uint64_t totalSystemTime;
     uint64_t totalUserTime;
@@ -51,8 +53,19 @@ struct cpuPrintInfo {
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _deviceIdLabel.text = [self deviceID];
-    _deviceNameLabel.text = [self deviceName];
+    DeviceInformationCollector *deviceCollector =
+        [[DeviceInformationCollector alloc] init];
+    
+    NSLog(@"DeviceInformationCollector ----------- ");
+    NSLog(@"Device Id -  %@", deviceCollector.deviceId);
+    NSLog(@"Device name -  %@", deviceCollector.deviceName);
+    NSLog(@"Username -  %@", deviceCollector.username);
+    NSLog(@"Device system - %@", deviceCollector.deviceSystem);
+    NSLog(@"Device system version - %@", deviceCollector.deviceSystemVersion);
+    NSLog(@"----------- ");
+    
+    _deviceIdLabel.text = deviceCollector.deviceId;
+    _deviceNameLabel.text = deviceCollector.deviceName;
     
     // Memory Usage
     _memoryUsageLabel.text = [NSString stringWithFormat:@"%f", [self memoryUsage]];
@@ -61,7 +74,7 @@ struct cpuPrintInfo {
     _deviceMemoryLabel.text = [NSString stringWithFormat:@"%f", [self deviceMemory]];
     
     // Device username
-    _deviceUserNameLabel.text = [self deviceUserName];
+    _deviceUserNameLabel.text = deviceCollector.username;
     
     // CPU
     struct cpuPrintInfo cpuInfo = [self createCpuPercentInfo];
@@ -81,8 +94,6 @@ struct cpuPrintInfo {
     // https://stackoverflow.com/questions/448162/determine-device-iphone-ipod-touch-with-iphone-sdk
     NSLog(@"Device model: %@", [UIDevice currentDevice].model);
     NSLog(@"Device name: %@", [UIDevice currentDevice].name);
-    NSLog(@"Device system name: %@", [UIDevice currentDevice].systemName);
-    NSLog(@"Device system version: %@", [UIDevice currentDevice].systemVersion);
 
     // OS String version
     // _OSVersionStringLabel.text = [self OSVersionStringLabel];

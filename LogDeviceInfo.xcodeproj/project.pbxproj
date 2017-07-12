@@ -14,6 +14,7 @@
 		312854A31EE7EDB00083FDDB /* LogDeviceInfo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 312854A11EE7EDB00083FDDB /* LogDeviceInfo.xcdatamodeld */; };
 		312854A51EE7EDB00083FDDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 312854A41EE7EDB00083FDDB /* Assets.xcassets */; };
 		312854A81EE7EDB00083FDDB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 312854A61EE7EDB00083FDDB /* LaunchScreen.storyboard */; };
+		31778CA61F162D2200AB38B3 /* DeviceInformationCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 31778CA51F162D2200AB38B3 /* DeviceInformationCollector.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,8 @@
 		312854A41EE7EDB00083FDDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		312854A71EE7EDB00083FDDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		312854A91EE7EDB00083FDDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31778CA41F162D2200AB38B3 /* DeviceInformationCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeviceInformationCollector.h; path = Models/DeviceInformationCollector.h; sourceTree = "<group>"; };
+		31778CA51F162D2200AB38B3 /* DeviceInformationCollector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeviceInformationCollector.m; path = Models/DeviceInformationCollector.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +63,7 @@
 		312854941EE7EDB00083FDDB /* LogDeviceInfo */ = {
 			isa = PBXGroup;
 			children = (
+				31778CA31F162CA300AB38B3 /* Models */,
 				312854981EE7EDB00083FDDB /* AppDelegate.h */,
 				312854991EE7EDB00083FDDB /* AppDelegate.m */,
 				3128549B1EE7EDB00083FDDB /* ViewController.h */,
@@ -80,6 +84,15 @@
 				312854961EE7EDB00083FDDB /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		31778CA31F162CA300AB38B3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				31778CA41F162D2200AB38B3 /* DeviceInformationCollector.h */,
+				31778CA51F162D2200AB38B3 /* DeviceInformationCollector.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,6 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31778CA61F162D2200AB38B3 /* DeviceInformationCollector.m in Sources */,
 				312854A31EE7EDB00083FDDB /* LogDeviceInfo.xcdatamodeld in Sources */,
 				3128549D1EE7EDB00083FDDB /* ViewController.m in Sources */,
 				3128549A1EE7EDB00083FDDB /* AppDelegate.m in Sources */,
@@ -315,6 +329,7 @@
 				312854AE1EE7EDB00083FDDB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
