@@ -101,7 +101,7 @@ struct cpuPrintInfo {
     // OS String version
     // _OSVersionStringLabel.text = [self OSVersionStringLabel];
     
-    _ipAddressLabel.text = [DeviceInformationCollector getNetworkData];
+    _ipAddressLabel.text = deviceCollector.ipAddress;
 }
 
 

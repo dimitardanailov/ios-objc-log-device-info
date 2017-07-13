@@ -18,6 +18,14 @@
 #include <net/if.h>
 #include <netdb.h>
 
+#import "IpAddress.h"
+
+@interface DeviceInformationCollector()
+@property (strong, nonatomic) NSMutableArray *ipAddresses;
+@end
+
+
+
 @implementation DeviceInformationCollector
 
 @synthesize deviceId = _deviceId;
@@ -37,7 +45,11 @@
         self.username = [self username];
         self.deviceSystem = [self deviceSystem];
         self.deviceSystemVersion = [self deviceSystemVersion];
-        self.ipAddress = [self ipAddress];
+        
+        // Ip addresses information
+        self.ipAddresses = [self ipAddresses];
+        
+        self.ipAddress = [DeviceInformationCollector convertIpAddressesToString:_ipAddresses];
     }
     
     return self;
@@ -75,8 +87,10 @@
     return [UIDevice currentDevice].systemVersion;
 }
 
-- (NSString *) ipAddress {
-    return [DeviceInformationCollector getNetworkData];
+- (NSMutableArray *)ipAddresses {
+    if (!_ipAddresses) _ipAddresses = [DeviceInformationCollector getIpAddresses];
+    
+    return _ipAddresses;
 }
 
 /*!
@@ -87,11 +101,11 @@
  * - BSD sockets
  *
  * Source: https://stackoverflow.com/questions/12690622/detect-any-connected-network
- * \returns string with network data
+ * \returns a collection with all possible network ip addresses
  */
-+ (NSMutableString *) getNetworkData
++ (NSMutableArray *) getIpAddresses
 {
-    NSMutableString *networkData = [[NSMutableString alloc]init];
+    NSMutableArray *ipAddresses = [[NSMutableArray alloc] init];
     
     struct ifaddrs *allInterfaces;
     
@@ -112,17 +126,39 @@
                     char host[NI_MAXHOST];
                     getnameinfo(addr, addr->sa_len, host, sizeof(host), NULL, 0, NI_NUMERICHOST);
                     
-                    // Generate interface information
-                    [networkData appendString:[NSString stringWithFormat:@"interface:%s, address:%s | ", interface->ifa_name, host]];
+                   
                     
                     // NSString *string = "interface:%s, address:%s\n", interface->ifa_name, host;
                     printf("interface:%s, address:%s\n", interface->ifa_name, host);
+                    
+                    IpAddress *ip = [[IpAddress alloc] init];
+                    ip.interface = [NSString stringWithFormat:@"%s" , interface->ifa_name];
+                    ip.host = [NSString stringWithFormat:@"%s" , host];
+                    
+                    [ipAddresses addObject:ip];
                 }
             }
         }
     }
     
     freeifaddrs(allInterfaces);
+    
+    return ipAddresses;
+}
+
+/*!
+ * Method is receiving collection with Network IP addresses and convert them in sting wiht f
+ *
+ * Source: https://stackoverflow.com/questions/12690622/detect-any-connected-network
+ * \returns string with network data
+ */
++ (NSMutableString *) convertIpAddressesToString:(NSMutableArray *)ipAddresses {
+    NSMutableString *networkData = [[NSMutableString alloc]init];
+    
+    for (IpAddress *ip in ipAddresses) {
+        // Generate interface information
+        [networkData appendString:[NSString stringWithFormat:@"interface:%@, address:%@ | ", ip.interface, ip.host]];
+    }
     
     return networkData;
 }

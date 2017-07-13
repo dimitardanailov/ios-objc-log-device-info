@@ -15,6 +15,7 @@
 		312854A51EE7EDB00083FDDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 312854A41EE7EDB00083FDDB /* Assets.xcassets */; };
 		312854A81EE7EDB00083FDDB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 312854A61EE7EDB00083FDDB /* LaunchScreen.storyboard */; };
 		31778CA61F162D2200AB38B3 /* DeviceInformationCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 31778CA51F162D2200AB38B3 /* DeviceInformationCollector.m */; };
+		A4C2D2801F17722700429842 /* IpAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = A4C2D27F1F17722700429842 /* IpAddress.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,8 @@
 		312854A91EE7EDB00083FDDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31778CA41F162D2200AB38B3 /* DeviceInformationCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeviceInformationCollector.h; path = Models/DeviceInformationCollector.h; sourceTree = "<group>"; };
 		31778CA51F162D2200AB38B3 /* DeviceInformationCollector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeviceInformationCollector.m; path = Models/DeviceInformationCollector.m; sourceTree = "<group>"; };
+		A4C2D27E1F17722700429842 /* IpAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IpAddress.h; path = Models/IpAddress.h; sourceTree = "<group>"; };
+		A4C2D27F1F17722700429842 /* IpAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IpAddress.m; path = Models/IpAddress.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,8 @@
 			children = (
 				31778CA41F162D2200AB38B3 /* DeviceInformationCollector.h */,
 				31778CA51F162D2200AB38B3 /* DeviceInformationCollector.m */,
+				A4C2D27E1F17722700429842 /* IpAddress.h */,
+				A4C2D27F1F17722700429842 /* IpAddress.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -169,6 +174,7 @@
 				31778CA61F162D2200AB38B3 /* DeviceInformationCollector.m in Sources */,
 				312854A31EE7EDB00083FDDB /* LogDeviceInfo.xcdatamodeld in Sources */,
 				3128549D1EE7EDB00083FDDB /* ViewController.m in Sources */,
+				A4C2D2801F17722700429842 /* IpAddress.m in Sources */,
 				3128549A1EE7EDB00083FDDB /* AppDelegate.m in Sources */,
 				312854971EE7EDB00083FDDB /* main.m in Sources */,
 			);
